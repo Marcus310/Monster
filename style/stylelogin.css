@@ -1,0 +1,187 @@
+@charset "UTF-8";
+:root{
+    /*--------Paleta de cores do Site-------------*/
+
+    --cor01:#aef300;
+    --cor02:#37af00;
+    --cor03:#438725;
+    --cor04:#5b6b8b;
+
+}
+
+h1{
+    font-family: 'Major Mono Display', monospace;
+    font-weight: 100;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #000000;
+}
+.login{
+    background: rgba(61, 61, 61, 0.39);
+    border-radius: 10px;
+    width: 400px;
+    padding: 40px;
+}
+.login h1{
+    margin-bottom: 35px;
+    font-size: 50px;
+    color: var(--cor01);
+    text-align: center;
+    font-weight: 500;
+}
+.login .box-user{
+    position: relative;
+}
+.login .box-user input{
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 19px;
+    margin-bottom: 40px;
+}
+.login .box-user label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    color: #ffffff;
+    font-size: 19px;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.login .box-user input:focus~label,
+.login .box-user input:valid~label
+
+{
+    top: -22px;
+    left: 0;
+    color:var(--cor02);
+    font-size: 14px;
+}
+.forget{
+    font-size: 15px;
+    color: var(--cor04);
+    float: right;
+}
+.btn{
+    position: relative;
+    display: inline-block;
+    padding: 12px 23px;
+    color: var(--cor01);
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: .3s;
+    overflow: hidden;
+}
+.btn:hover{
+    background: var(--cor02);
+    border-radius: 5px;
+    color: #ffffff;
+}
+.btn span{
+    position: absolute;
+    display: block;
+}
+.btn span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #00f300);
+    animation: btn1 1s linear infinite;
+}
+@keyframes btn1{
+    0%{
+        left: -100%;
+    }
+    50%,
+    100%{
+        left: 100%;
+    }
+}
+.btn span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #00d600);
+    animation: btn2 1s linear infinite;
+    animation-delay: .20s;
+}
+@keyframes btn2{
+    0%{
+        top: -100%;
+    }
+    50%,
+    100%{
+        top: 100%;
+    }
+}
+.btn span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg, transparent, #00af00);
+    animation: btn3 1s linear infinite;
+    animation-delay: .45s;
+}
+@keyframes btn3{
+    0%{
+        right: -100%;
+    }
+    50%,
+    100%{
+        right: 100%;
+    }
+}
+.btn span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(26deg, transparent, #007500);
+    animation: btn4 1s linear infinite;
+    animation-delay: .70s;
+}
+@keyframes btn4{
+    0%{
+        bottom: -100%;
+    }
+    50%,
+    100%{
+        bottom: 100%;
+    }
+}
+@media (max-width: 405px){
+    .login{
+        width: 90%;
+    }
+}
