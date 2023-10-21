@@ -1,1 +1,46 @@
 @charset "UTF-8";
+
+.card-text{
+    text-decoration: none;
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .whatsapp-button img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  
+.whatsapp-button img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #25d366, #128c7e);
+    animation: whatsapp-glow 2s infinite alternate;
+    transition: transform 0.3s;
+  }
+  
+  @keyframes whatsapp-glow {
+    0% {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transform: scale(1);
+    }
+    100% {
+      box-shadow: 0 4px 16px rgba(0, 128, 0, 0.5);
+      transform: scale(1.05);
+    }
+  }
+
