@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="/imgs/favicon.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="/style/style.css">
-    <link rel="stylesheet" href="/scripts/scripts.js">
+    <link rel="shortcut icon" href="/Monster/imgs/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="/Monster/style/style.css">
+    <link rel="stylesheet" href="/Monster/scripts/scripts.js">
     <title>Monster</title>
     
 </head>
@@ -15,7 +15,13 @@
     <header>
       <div id="whatsapp-button" class="whatsapp-button">
         <a href="https://l.instagram.com/?u=https%3A%2F%2Fapi.whatsapp.com%2Fsend%3Fphone%3D5515988331773&e=AT38EoTplx8lmAD3eU_rDceyLO5qHDqQh5V4HbeSyUG12LhBZY-24-LzHXA-wlv5poBzb-wHLDPSV3I0F5oaHOk2wiqMn1sSAAZaDg" target="_blank">
-          <img src="/imgs/WhatsApp-icon.png" alt="WhatsApp">
+          <img src="/Monster/imgs/WhatsApp-icon.png" alt="icon do WhatsApp, para contatar a loja">
+        </a>
+      </div>
+
+      <div id="setaCima-button" class="setaCima-button">
+        <a href="#">
+          <img src="/Monster/imgs/seta.png" alt="Seta para rolar a pagina para o topo">
         </a>
       </div>
 
@@ -53,31 +59,55 @@
     </header>
     <main>
 
+<!-----------------------------------------------------------------CARROSEL-------------------------------------------------------------------->
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-inter="4">
+      <img src="/Monster/imgs/banner2.png" class="d-block w-100" alt="banner de um relogio da Apple">
+      <div class="carousel-caption d-none d-md-block">
+        <h5></h5>
+        <p></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/Monster/imgs/banner1.png" class="d-block w-100" alt="banner com produtos Apple">
+      <div class="carousel-caption d-none d-md-block">
+        <h5></h5>
+        <p></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/Monster/imgs/banner3.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5></h5>
+        <p></p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/Monster/imgs/banner4.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5></h5>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-----------------------------------------------------------------CARROSEL--------------------------------------------------------------------> 
       <section>
-        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="/imgs/sl1.jpg" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://www.4devs.com.br/4devs_gerador_imagem.php?acao=gerar_imagem&txt_largura=1459&txt_altura=300&extensao=png&fundo_r=0.9029541015625&fundo_g=0.5323813855648041&fundo_b=0&texto_r=0&texto_g=0&texto_b=0&texto=Gerador%20Imagem%20%234Devs&tamanho_fonte=10" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://www.4devs.com.br/4devs_gerador_imagem.php?acao=gerar_imagem&txt_largura=1459&txt_altura=300&extensao=png&fundo_r=0&fundo_g=1&fundo_b=0.464599609375&texto_r=0&texto_g=0&texto_b=0&texto=Gerador%20Imagem%20%234Devs&tamanho_fonte=10" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section> <!--carrossel-->
-      <section>
-
         <div class="container-fluid">
             <div class="m-4 text-center">
               <h2>Produtos</h2>
@@ -87,24 +117,22 @@
         <div class="row row-cols-1 row-cols-md-2 g-4 m-5"> 
           <div class="col">
             <div class="card">
-              <img src="/imgs/ip.webp" class="card-img-top" alt="imagem de iphones">
+              <img src="/Monster/imgs/ip.webp" class="card-img-top" alt="imagem de iphones">
               <div class="card-body">
                 <h3 class="card-title" style="font-family: 'Major Mono Display', monospace;">Iphones</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia sit expedita ratione obcaecati libero maiores culpa, nisi, officia laudantium earum illo rerum eum explicabo voluptate qui nostrum vel alias et.</p>
               </div>
             </div>
           </div>
-          
         </a>
-        
 
-        <a href="/views/gridprodutos/mackbooks.html" target="_self" style="text-decoration: none;">
+        <a href="/Monster/views/gridprodutos/mackbooks.html" target="_self" style="text-decoration: none;">
           <div class="col">
             <div class="card">
-              <img src="/imgs/mac.png" class="card-img-top" alt="imagem de um macbook">
+              <img src="/Monster/imgs/mac.png" class="card-img-top" alt="imagem de um macbook">
               <div class="card-body">
                 <h3 class="card-title" style="font-family: 'Major Mono Display', monospace;">MackBook</h3>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, dolor odit ut illo quod ipsam, cum aliquid nam in vero ab corrupti atque, reiciendis itaque neque numquam repellat sa</p>
               </div>
             </div>
           </div>
@@ -113,7 +141,7 @@
           <a href="/views/gridprodutos/earpods.html" target="_self" style="text-decoration: none;">
             <div class="col">
               <div class="card">
-                <img src="/imgs/ear.jpg" class="card-img-top" alt="imagem de um earpods">
+                <img src="/Monster/imgs/ear.jpg" class="card-img-top" alt="imagem de um earpods">
                 <div class="card-body">
                   <h3 class="card-title"style="font-family: 'Major Mono Display', monospace;">EarPods</h3>
                   <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -125,7 +153,7 @@
           <a href="/views/gridprodutos/outros.html" target="_self" style="text-decoration: none;">
           <div class="col">
             <div class="card">
-              <img src="/imgs/geral.jpg" class="card-img-top" alt="Produtos da Apple">
+              <img src="/Monster/imgs/geral.jpg" class="card-img-top" alt="Produtos da Apple">
               <div class="card-body">
                 <h3 class="card-title" style="font-family: 'Major Mono Display', monospace;">Outros Produtos</h3>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -134,47 +162,63 @@
           </div>
         </div>
       </a>
-      
+      <!---------------------------------------------------------------Feedback---------------------------------------------------------------->
       </section>
-
       <section class="container marketing">
           <div class="m-3 d-flex justify-content-around">
-              <h2>Nossos feedbacks</h2>
+              <h2>Feedbacks</h2>
           </div>
           <div class="row">
             <div class="col-lg-4">
               <div class="d-flex align-items-center flex-column">
-                <svg class="bd-placeholder-img rounded-squa" width="270" height="350" xmlns="" style="background-image: 'imgs/fd1.jpg' ;" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false" style="border-radius: 15px;"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                <h2 class="fw-normal m-2">Heading</h2>
-                <p style="text-decoration: none;">Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                <div class="col-lg-4">
+                <div class="d-flex align-items-center flex-column">
+                <img src="/Monster/imgs/feedback3.png" alt="Sua imagem" width="203" height="350" style="border-radius: 15px;"> <br>
+                <p></p>
+                <p><a href="https://www.instagram.com/stories/highlights/17907755305754587/" target="_blank"><button type="button" class="btn btn-outline-success">CONFIRA</button></a></p>
+              </div>
+            </div>
+          </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="d-flex align-items-center flex-column">
+                <img src="/Monster/imgs/feedback2.png" alt="Sua imagem" width="203" height="350" style="border-radius: 15px;"> <br>
+                <p></p>
+                <p><a href="https://www.instagram.com/stories/highlights/17907755305754587/" target="_blank"><button type="button" class="btn btn-outline-success">CONFIRA</button></a></p>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="d-flex align-items-center flex-column">
-                <svg class="bd-placeholder-img rounded-squa" width="270" height="350" xmlns="" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false" style="border-radius: 15px;" ><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                <h2 class="fw-normal m-2">Heading</h2>
-                <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                <p><a class="btn btn-secondary" href="#">View details »</a></p>
-              </div>
-        
-            </div>
-            <div class="col-lg-4">
-              <div class="d-flex align-items-center flex-column">
-                <svg class="bd-placeholder-img rounded-squa" width="270" height="350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false" style="border-radius: 15px;"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                <h2 class="fw-normal m-2">Heading</h2>
-                <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                <img src="/Monster/imgs/feed1.png" alt="Sua imagem" width="203" height="350" style="border-radius: 15px;"> <br>
+                <p></p>
+                <p><a href="https://www.instagram.com/stories/highlights/17907755305754587/" target="_blank"><button type="button" class="btn btn-outline-success">CONFIRA</button></a></p>
               </div>
             </div>
           </div>
       </section>
     </main>
 
-    <footer class="mt-5" style="background-color: rgb(108, 214, 152); height: 100px;">
+    <footer class="mt-5" style="background-color: rgb(129, 117, 117); height: 160px;">
         <div class="container d-flex justify-content-around">
-            <p class="float-right"><a href="#">Voltar ao Topo</a></p>
-            <p>Criado por Marcus, 2023 <a href="#"> Privacidade</a> <a href="#">Termos</a></p>
+            <div class="p-4 g-col-6">
+              <div class="fs-4">
+                <p class="float-right">Formas de Pagamento</p>
+                <div class="formasDePagamento">
+                  <img src="/Monster/imgs/icons/elo.png" alt="">
+                  <img src="/Monster/imgs/icons/pix.png" alt="">
+                  <img src="/Monster/imgs/icons/mastercard.avif" alt="">
+                  <img src="/Monster/imgs/icons/visa.avif" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 g-col-6">
+              <div class="fs-4">
+                <p class="float-left">Redes Sociais</p>
+                <a href="https://m.facebook.com/profile.php?id=100066962044897&eav=AfZY5-brCR2iEH_kG9N_MQ4e5v8257ymqeo2ocxPrUcfY-tdQ2CB2Q3q6OX9ieju2aU&tsid=0.6919627692502548&source=result" target="_blank"><img src="/Monster/imgs/icons/facebook.png" alt="icone do facebook"></a>
+                <a href="https://www.instagram.com/monstersorocaba/" target="_blank"><img src="/Monster/imgs/icons/isntagram.png" alt="icone do instagram"></a>
+              </div>
+            </div>
         </div>
     </footer>
 </body>
