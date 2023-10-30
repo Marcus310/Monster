@@ -5,5 +5,3 @@ document.getElementById('whatsapp-button').addEventListener('mouseenter', functi
   document.getElementById('whatsapp-button').addEventListener('mouseleave', function() {
     this.style.transform = 'scale(1)';
   });
-
-  

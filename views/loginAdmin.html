@@ -17,19 +17,17 @@
         <h1>login</h1>
         <div class="box-user">
             <input type="text" name="" required>
-            <button><a href="/Monster/views/administrador.html"></a>
-                <label>Usuário :</label>
-            </button>
+            <label>Usuário :</label>
         </div>
         <div class="box-user">
-            <input type="password" name="" required>
-            <label>Senha :</label>
+            <input type="password" name="" id="password" required>
+            <label for="password">Senha :</label>
         </div>
         
         <div class="recuperarsenha">
             <a href="recuperarsenha.html" class="forget" target="_self"> Esqueceu a senha?</a>
         </div>
-        <a href="administrador.html" class="btn" target="_self">
+        <a onclick="validateLogin()" class="btn" target="_self">
             <span></span>
             <span></span>
             <span></span>
@@ -37,6 +35,33 @@
             Entrar
         </a>
     </form>
+
+    <p id="loginMessage"></p>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            fetch('http://localhost:3001/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => {
+                if (response.status === 200) {
+                    document.getElementById("loginMessage").innerHTML = "Login bem-sucedido!";
+                    window.location.href= '/Monster/views/administrador.html';
+                } else if (response.status === 401) {
+                    document.getElementById("loginMessage").innerHTML = "Nome de usuário ou senha incorretos. Tente novamente.";
+                } else {
+                    document.getElementById("loginMessage").innerHTML = "Erro interno do servidor";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
