@@ -6,11 +6,7 @@ const cors = require('cors');
 
 // Criando uma instância do Express
 const app = express();
-
-// Definindo a porta em que o servidor será executado
-const port = 3001;
-
-// Habilitando o CORS para permitir solicitações de qualquer origem
+const port = 3003;
 app.use(cors({
   origin: "*"
 }));
