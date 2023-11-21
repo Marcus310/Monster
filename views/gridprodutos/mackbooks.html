@@ -16,12 +16,12 @@
             cursor: pointer;
             font-size: 16px;
             margin-top: 10px;
-            /* Adicionando margem superior para mover o botão para baixo */
         }
 
         button:hover {
             background-color: #45a049;
         }
+
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -31,7 +31,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            overflow: hidden;
         }
 
         h1 {
@@ -42,6 +42,13 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 75px;
+            position: fixed;
+            overflow-y: auto;
+            inset: 0;
         }
 
         li {
