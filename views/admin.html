@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Users/Pichau/Desktop/Projeto Monster/Monster/imgs/favicon.jpg" type="image/x-icon">
+    <title>Página de Administração</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 8px;
+            padding: 0;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: auto;
+        }
+
+
+        form {
+            max-width: 400px;
+            background-color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .mensagem {
+            color: green;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="produtoForm" enctype="multipart/form-data">
+        <h1>Página de Administração</h1>
+
+        <label for="categoria">Categoria do Produto:</label>
+        <select id="categoria" name="categoria" required>
+            <option value="todos">Todos</option>
+            <option value="iphone">iPhone</option>
+            <option value="macbook">MacBook</option>
+            <option value="ipad">iPad</option>
+            <option value="outros">Outros</option>
+        </select>
+
+        <label for="nome">Nome do Produto:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="armazenamento">Armazenamento do Produto:</label>
+        <select id="armazenamento" name="armazenamento" required>
+            <option value="*">*</option>
+            <option value="64G">64GB</option>
+            <option value="128G">128GB</option>
+            <option value="256G">256GB</option>
+            <option value="512G">512GB</option>
+            <option value="1TB">1TB</option>
+        </select>
+
+        <label for="cor">Cor do Produto:</label>
+        <input type="text" id="cor" name="cor" required>
+
+        <label for="preco">Preço do Produto:</label>
+        <input type="number" id="preco" name="preco" step="0.01" required>
+
+        <label for="imagem">Imagem do Produto:</label>
+        <input type="file" id="imagem" name="imagem" accept="image/*" required>
+
+        <button type="submit">Adicionar Produto</button>
+    </form>
+
+    <div class="mensagem" id="mensagem"></div>
+
+    <!-- Tabela para listar os produtos -->
+    <table>
+        <thead>
+            <tr>
+                <th>Categoria</th>
+                <th>Nome</th>
+                <th>Armazenamento</th>
+                <th>Cor</th>
+                <th>Preço</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody id="produto-list">
+            <!-- Aqui serão adicionados os produtos dinamicamente -->
+        </tbody>
+    </table>
+
+    <script>
+        // Função para carregar os produtos ao carregar a página
+        window.onload = function () {
+            carregarProdutos();
+        };
+
+        // Adicionando evento de submit ao formulário
+        document.getElementById('produtoForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('http://localhost:3003/adicionarProduto', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("data:", data);
+                    exibirMensagem('Produto adicionado com sucesso!');
+                    document.getElementById('produtoForm').reset(); // Resetar o formulário
+                    carregarProdutos();
+                })
+                .catch(error => {
+                    console.error('Erro ao enviar o formulário:', error);
+                    exibirMensagem('Erro ao adicionar o produto.', 'red');
+                });
+        });
+
+
+        // Função para exibir mensagem
+        function exibirMensagem(mensagem, cor = 'green') {
+            const mensagemElement = document.getElementById('mensagem');
+            mensagemElement.textContent = mensagem;
+            mensagemElement.style.color = cor;
+        }
+
+        // Função para carregar os produtos da API
+        function carregarProdutos() {
+            fetch('http://localhost:3003/obterProdutos')
+                .then(response => response.json())
+                .then(produtos => exibirProdutos(produtos));
+        }
+
+        // Função para exibir os produtos na tabela
+        function exibirProdutos(produtos) {
+            const listaProdutos = document.getElementById('produto-list');
+            listaProdutos.innerHTML = '';
+
+            const categoriaSelecionada = document.getElementById('categoria').value;
+
+            produtos.forEach(produto => {
+                if (categoriaSelecionada === 'todos' || produto.categoria === categoriaSelecionada) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${produto.categoria}</td>
+                        <td>${produto.nome}</td>
+                        <td>${produto.armazenamento}</td>
+                        <td>${produto.cor}</td>
+                        <td>${produto.preco}</td>
+                        <td>
+                            <button onclick="excluirProduto(${produto.id})">Excluir</button>
+                        </td>
+                    `;
+                    listaProdutos.appendChild(row);
+                }
+            });
+        }
+
+        // Função para excluir um produto
+        function excluirProduto(id) {
+            if (confirm('Deseja realmente excluir este produto?')) {
+                fetch(`http://localhost:3003/excluirProduto/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("data", data);
+                        exibirMensagem('Produto excluído com sucesso!');
+                        carregarProdutos(); // Recarregar a lista após excluir
+                    })
+                    .catch(error => {
+                        console.error('Erro ao excluir produto:', error);
+                        exibirMensagem('Erro ao excluir o produto.', 'red');
+                    });
+            }
+        }
+
+        // Adicionando evento de mudança ao selecionar uma categoria
+        document.getElementById('categoria').addEventListener('change', function () {
+            carregarProdutos();
+        });
+    </script>
+</body>
+
+</html>
