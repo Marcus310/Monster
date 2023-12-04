@@ -7,7 +7,9 @@ O projeto trata-se de um site voltado para uma loja de vendedora de produtos App
 
 ## Desenvolvedores/Contribuintes:
 Marcus Vinícius Apolinário da Silva
+
 Matheus dos Santos Poveda
+
 Juan Matias Calixto
 
 ## Licença
